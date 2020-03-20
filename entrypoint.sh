@@ -11,7 +11,7 @@ exit_code=0
 FILES=$(find "$INPUT_PATH_TO_SCHEMAS" -type f)
 
 for f in $FILES; do
-    ajv compile -s "$f" -m ./iglu_meta_schema.json | reviewdog -f=checkstyle -name="iglulint" -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}"
+    ajv compile -s "$f" -m /iglu_meta_schema.json | reviewdog -f=checkstyle -name="iglulint" -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}"
 
     ec=$?
     if [ ${ec} -ne "0" ]; then
