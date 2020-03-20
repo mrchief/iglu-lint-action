@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-ls -ah /
-
 if [ -n "${GITHUB_WORKSPACE}" ]; then
     cd "${GITHUB_WORKSPACE}" || exit
 fi
@@ -15,9 +13,11 @@ FILES=$(find "$INPUT_PATH_TO_SCHEMAS" -type f)
 for f in $FILES; do
     ajv compile -s "$f" -m /iglu_meta_schema.json | reviewdog -f=checkstyle -name="iglulint" -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}"
 
+    echo $?
+    RC=(${PIPESTATUS[@]})
     ec=$?
-    echo $ec
-    if [ ${ec} -ne "0" ]; then
+    echo ${RC[0]} ${RC[1]} $ec
+    if [ ${ec} -ne 0 ]; then
         exit_code=${ec}
     fi
 done
