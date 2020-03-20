@@ -16,9 +16,11 @@ for f in $FILES; do
     ajv compile -s "$f" -m /iglu_meta_schema.json | reviewdog -f=checkstyle -name="iglulint" -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}"
 
     ec=$?
+    echo $ec
     if [ ${ec} -ne "0" ]; then
         exit_code=${ec}
     fi
 done
 
+echo $exit_code
 exit $exit_code
