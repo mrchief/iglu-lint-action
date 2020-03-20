@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+ls -ah /
+
 if [ -n "${GITHUB_WORKSPACE}" ]; then
     cd "${GITHUB_WORKSPACE}" || exit
 fi
