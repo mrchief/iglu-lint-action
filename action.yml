@@ -1,0 +1,29 @@
+name: "Iglu Schema Lint"
+description: "Validate Iglu JSON Schemas for syntax errors."
+author: "Hrusikesh Panda <mrchief_2000@yahoo.com>"
+branding:
+  icon: "feather"
+  color: "gray-dark"
+inputs:
+  path_to_schemas:
+    description: Folder where schemas are stored. You can pass globs that bash shell can evaluate.
+    required: true
+  github_token:
+    description: "GITHUB_TOKEN"
+    required: true
+  reporter:
+    description: |
+      Reporter of reviewdog command [github-pr-check, github-pr-review].
+      Default is github-pr-check.
+    default: "github-pr-check"
+  level:
+    description: "Report level for reviewdog [info, warning, error]"
+    default: "error"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.path_to_schemas }}
+    - ${{ inputs.github_token }}
+    - ${{ inputs.level }}
+    - ${{ inputs.reporter }}
