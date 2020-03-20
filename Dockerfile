@@ -2,8 +2,7 @@ FROM node:lts-alpine3.9
 
 ENV REVIEWDOG_VERSION=v0.9.17
 
-RUN apk --no-cache --update add bash git &&
-    rm -rf /var/cache/apk/*
+RUN apk --no-cache --update add bash git && rm -rf /var/cache/apk/*
 
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
