@@ -23,25 +23,25 @@ License: MIT License\
 https://github.com/zaach/jsonlint#mit-license
 
 Package: [igluctl](https://github.com/snowplow/iglu/tree/master/0-common/igluctl)\
-License: Apache License 2.0
+License: Apache License 2.0\
 https://github.com/snowplow/iglu/blob/master/0-common/igluctl/LICENSE-2.0.txt
 
 Package: [openjdk8-jre](https://pkgs.alpinelinux.org/package/v3.11/community/x86/openjdk8-jre)\
-License: custom
+License: custom\
 https://git.alpinelinux.org/aports/tree/community/openjdk8/APKBUILD?h=3.11-stable#n13
 
 Package: [jq](https://pkgs.alpinelinux.org/package/v3.11/main/x86/jq)\
-License: MIT
+License: MIT\
 https://github.com/stedolan/jq/blob/master/COPYING
 
 Package: [curl](https://pkgs.alpinelinux.org/package/v3.11/main/x86/curl)\
-License: MIT
+License: MIT\
 https://git.alpinelinux.org/aports/tree/main/curl/APKBUILD?h=3.11-stable#n11
 
 Package: [bash](https://pkgs.alpinelinux.org/package/v3.11/main/x86/bash)\
-License: GPL-3.0-or-later
+License: GPL-3.0-or-later\
 https://git.alpinelinux.org/aports/tree/main/bash/APKBUILD?h=3.11-stable#n13
 
 Package: [ca-certificates](https://pkgs.alpinelinux.org/package/v3.11/main/x86/ca-certificates)\
-License: MPL-2.0 GPL-2.0-or-later
+License: MPL-2.0 GPL-2.0-or-later\
 https://git.alpinelinux.org/aports/tree/main/ca-certificates/APKBUILD?h=3.11-stable#n9
