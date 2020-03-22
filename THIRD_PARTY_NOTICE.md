@@ -6,7 +6,7 @@ This Github action uses third party packages in its Docker container. The follow
 
 ### Container base
 
-Image: [node:lts-alpine3.9](https://hub.docker.com/layers/node/library/node/lts-alpine3.9/images/sha256-bde45036802614d768fbdfc21fc36c4b729ce0a9cb939aaba2cbd82415bce9f8?context=explore)\
+Image: [node:lts-alpine3.11](https://hub.docker.com/layers/node/library/node/alpine3.11/images/sha256-662b812d33a75c70c3cdc146eb52d793a42ec5884e2c2614143b02e95ebacbfe?context=explore)\
 License: MIT License\
 More information at https://hub.docker.com/_/node/, under License
 
@@ -18,16 +18,30 @@ https://github.com/npm/cli/blob/latest/LICENSE
 
 ### Packages
 
-Package: [reviewdog/reviewdog](https://github.com/reviewdog/reviewdog)\
+Package: [zaach/jsonlint](https://github.com/zaach/jsonlint)\
 License: MIT License\
-https://github.com/reviewdog/reviewdog/blob/master/LICENSE
+https://github.com/zaach/jsonlint#mit-license
 
-Package: [jessedc/ajv-cli](https://github.com/jessedc/ajv-cli)\
-License: MIT License
-https://github.com/jessedc/ajv-cli#licence
+Package: [igluctl](https://github.com/snowplow/iglu/tree/master/0-common/igluctl)\
+License: Apache License 2.0
+https://github.com/snowplow/iglu/blob/master/0-common/igluctl/LICENSE-2.0.txt
 
-### Schemas
+Package: [openjdk8-jre](https://pkgs.alpinelinux.org/package/v3.11/community/x86/openjdk8-jre)\
+License: custom
+https://git.alpinelinux.org/aports/tree/community/openjdk8/APKBUILD?h=3.11-stable#n13
 
-Schema: [Iglu meta schema](https://github.com/snowplow/iglu-central)
-License: Apache License, Version 2.0
-https://github.com/snowplow/iglu-central/blob/master/LICENSE-2.0.txt
+Package: [jq](https://pkgs.alpinelinux.org/package/v3.11/main/x86/jq)\
+License: MIT
+https://github.com/stedolan/jq/blob/master/COPYING
+
+Package: [curl](https://pkgs.alpinelinux.org/package/v3.11/main/x86/curl)\
+License: MIT
+https://git.alpinelinux.org/aports/tree/main/curl/APKBUILD?h=3.11-stable#n11
+
+Package: [bash](https://pkgs.alpinelinux.org/package/v3.11/main/x86/bash)\
+License: GPL-3.0-or-later
+https://git.alpinelinux.org/aports/tree/main/bash/APKBUILD?h=3.11-stable#n13
+
+Package: [ca-certificates](https://pkgs.alpinelinux.org/package/v3.11/main/x86/ca-certificates)\
+License: MPL-2.0 GPL-2.0-or-later
+https://git.alpinelinux.org/aports/tree/main/ca-certificates/APKBUILD?h=3.11-stable#n9
