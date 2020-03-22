@@ -1,17 +1,5 @@
-# 0.1.0 - 22-3-2020
+# 1.0.0 (2020-03-22)
 
-## Unclassified Changes
+## Features
 
-- Initial commit
-
-## Changes
-
-### Features
-    
-- Working cut with proper review comments
-- First cut
-### Bug Fixes
-    
-- debug artifact
-- Missing newline
-
+- Validate [Iglu](https://github.com/snowplow/iglu) JSON Schema for errors
