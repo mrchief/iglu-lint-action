@@ -1,16 +1,15 @@
-FROM node:lts-alpine3.9
+FROM node:alpine3.11
 
-ENV REVIEWDOG_VERSION=v0.9.17
+RUN apk update \
+    && apk --no-cache add ca-certificates bash curl openjdk8-jre jq \
+    && update-ca-certificates
 
-RUN apk --no-cache --update add bash git && rm -rf /var/cache/apk/*
+RUN rm -rf /var/cache/apk/*
 
-SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
+RUN npm i jsonlint -g
 
-RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b /usr/local/bin/ ${REVIEWDOG_VERSION}
+COPY igluctl /usr/local/bin/
 
-RUN npm install -g ajv-cli
-
-COPY iglu_meta_schema.json /iglu_meta_schema.json
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]

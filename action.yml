@@ -6,18 +6,21 @@ branding:
   color: "gray-dark"
 inputs:
   path_to_schemas:
-    description: Folder where schemas are stored. You can pass globs that bash shell can evaluate.
+    description: "Folder where schemas are stored. You can pass globs that bash shell can evaluate."
     required: true
   github_token:
     description: "GITHUB_TOKEN"
     required: true
-  reporter:
-    description: |
-      Reporter of reviewdog command [github-pr-check, github-pr-review].
-      Default is github-pr-check.
-    default: "github-pr-check"
+  skip_checks:
+    description: "Comma separated list of checks to skip with Igluctl."
+    default: "description,rootObject"
+  base_branch:
+    description: "Base branch for the Pull Request. Defaults to master."
+    required: false
+    default: "master"
   level:
-    description: "Report level for reviewdog [info, warning, error]"
+    description: "Logging level [info,error]. Defaults to error"
+    required: false
     default: "error"
 runs:
   using: "docker"
@@ -25,5 +28,6 @@ runs:
   args:
     - ${{ inputs.path_to_schemas }}
     - ${{ inputs.github_token }}
+    - ${{ inputs.skip_checks }}
+    - ${{ inputs.base_branch }}
     - ${{ inputs.level }}
-    - ${{ inputs.reporter }}
