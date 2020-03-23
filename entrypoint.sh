@@ -9,6 +9,8 @@ commitId=$(cat ${GITHUB_EVENT_PATH} | jq --raw-output .after)
 owner=$(cat ${GITHUB_EVENT_PATH} | jq --raw-output .repository.owner.login)
 repo=$(cat ${GITHUB_EVENT_PATH} | jq --raw-output .repository.name)
 
+info "Linting with:: owner/repo: ${owner}/${repo}; commit: ${commitId}; pr#: ${prNum}"
+
 allComments=$(curl -s "https://api.github.com/repos/${owner}/${repo}/pulls/${prNum}/comments" \
     -H 'Accept: application/vnd.github.comfort-fade-preview+json' \
     -H "Authorization: Bearer ${INPUT_GITHUB_TOKEN}")
