@@ -53,11 +53,9 @@ Errors are posted as review comments. Some examples are:
 
 - jsonlint doesn't report all errors at once, so you may have to make multiple passes if your JSON Schema file contains multiple errors.
 
-- Currently, this action doesn't prevent duplicate comments on multiple runs, or reruns of your workflow. In other words, if you have an error for `file A` and you make more changes to your PR without fixing `file A`, then subsequent runs will post another comment for `file A`. Fixing this is on the roadmap and PRs are welcome.
-
 ## Roadmap
 
-[ ] - Do not report multiple comments on subsequent runs.
+[X] - ~~Do not report multiple comments on subsequent runs.~~ Fixed in v1.1.0
 
 ## Contributing
 
