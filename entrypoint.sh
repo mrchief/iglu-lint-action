@@ -24,7 +24,7 @@ info() {
 removePreviousComments() {
     info "removing comments for: $1 $2"
     echo $allComments |
-        jq --arg file "$1" --argjson line $2 '.[]
+        jq --arg file "$1" --argjson line ${2:-1} '.[]
           | select(.user.login=="github-actions[bot]")
           | { id: .id, path: .path, line: .line }
           | select(.path==$file and .line==$line)
