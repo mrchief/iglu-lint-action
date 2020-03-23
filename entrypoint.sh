@@ -93,7 +93,7 @@ for f in $FILES; do
         jsonlintExitCode=$ec
         postJsonLintError "${lintErrors}"
     else
-        igluErrors=$(igluctl lint --skip-checks description,rootObject,stringLength,optionalNull ${f})
+        igluErrors=$(igluctl lint --skip-checks ${INPUT_SKIP_CHECKS:-description,rootObject} ${f})
         ec=$?
         if [ $ec -ne 0 ]; then
             iglulintExitCode=$ec
