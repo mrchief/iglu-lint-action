@@ -4,6 +4,14 @@ if [[ "$INPUT_LEVEL" == "info" ]]; then
     VERBOSE=' '
 fi
 
+info() {
+    if [[ ! -z "$VERBOSE" ]]; then
+        echo -e "\n>>>>>>>\n"
+        echo $@
+        echo -e "\n<<<<<<<\n"
+    fi
+}
+
 prNum=$(cat ${GITHUB_EVENT_PATH} | jq --raw-output .pull_request.number)
 commitId=$(cat ${GITHUB_EVENT_PATH} | jq --raw-output .after)
 owner=$(cat ${GITHUB_EVENT_PATH} | jq --raw-output .repository.owner.login)
@@ -14,14 +22,6 @@ info "Linting with:: owner/repo: ${owner}/${repo}; commit: ${commitId}; pr#: ${p
 allComments=$(curl -s "https://api.github.com/repos/${owner}/${repo}/pulls/${prNum}/comments" \
     -H 'Accept: application/vnd.github.comfort-fade-preview+json' \
     -H "Authorization: Bearer ${INPUT_GITHUB_TOKEN}")
-
-info() {
-    if [[ ! -z "$VERBOSE" ]]; then
-        echo -e "\n>>>>>>>\n"
-        echo $@
-        echo -e "\n<<<<<<<\n"
-    fi
-}
 
 removePreviousComments() {
     info "removing comments for: $1 $2"
