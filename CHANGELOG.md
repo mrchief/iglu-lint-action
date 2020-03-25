@@ -1,3 +1,10 @@
+# 1.1.1 - 23-3-2020
+### Bug Fixes
+    
+- Declare info at the right place
+- Read skip-checks from input
+- Handle no line scenarios
+
 # 1.1.0 - 23-3-2020
 ### Features
     
