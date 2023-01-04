@@ -11,6 +11,7 @@ info() {
         echo -e "\n<<<<<<<\n"
     fi
 }
+if [[ "$6" == "lint" ]]; then
 
 prNum=$(cat ${GITHUB_EVENT_PATH} | jq --raw-output .pull_request.number)
 commitId=$(cat ${GITHUB_EVENT_PATH} | jq --raw-output .after)
@@ -107,4 +108,9 @@ if [ $jsonlintExitCode -ne 0 ]; then
 fi
 if [ $iglulintExitCode -ne 0 ]; then
     exit $iglulintExitCode
+fi
+fi
+
+if [[ "$6" == "push" ]]; then
+    echo "push"
 fi

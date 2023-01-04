@@ -1,4 +1,4 @@
-name: "Iglu Schema Lint"
+name: "Igluctl"
 description: "Validate Iglu JSON Schemas for syntax errors."
 author: "Hrusikesh Panda <mrchief_2000@yahoo.com>"
 branding:
@@ -22,6 +22,10 @@ inputs:
     description: "Logging level [info,error]. Defaults to error"
     required: false
     default: "error"
+  action:
+    description: "Igluctl action. Defaults to lint"
+    required: false
+    default: "lint"
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -31,3 +35,4 @@ runs:
     - ${{ inputs.skip_checks }}
     - ${{ inputs.base_branch }}
     - ${{ inputs.level }}
+    - ${{ inputs.action }}
