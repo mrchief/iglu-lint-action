@@ -112,5 +112,5 @@ fi
 fi
 
 if [[ "$6" == "push" ]]; then
-    echo "push"
+    echo "igluctl lint --skip-checks ${INPUT_SKIP_CHECKS:-description,rootObject} ${f}"
 fi
